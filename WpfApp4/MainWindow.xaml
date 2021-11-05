@@ -9,10 +9,6 @@
         Title="MainWindow" Height="450" Width="800"
         x:Name="This">
 
-    <Window.Resources>
-        <local:SimpleTemplateSelector x:Key="SimpleTemplateSelector"/>
-    </Window.Resources>
-
     <UniformGrid Rows="2">
         <DockPanel>
             <Button DockPanel.Dock="Top" Click="Add">Add</Button>
