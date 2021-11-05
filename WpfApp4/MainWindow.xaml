@@ -14,29 +14,13 @@
     </Window.Resources>
 
     <UniformGrid Rows="2">
-        <UniformGrid Columns="2">
-            <TreeView x:Name="MenuTreeView" SelectedValuePath="Tag">
-                <TreeView.ItemContainerStyle>
-                    <Style TargetType="{x:Type TreeViewItem}">
-                        <Setter Property="Padding" Value="10"/>
-                    </Style>
-                </TreeView.ItemContainerStyle>
-                <TreeViewItem Header="General" Tag="AlarmZones"/>
-                <TreeViewItem Header="Zones" Tag="EventCounter"/>
-            </TreeView>
-
-            <ContentControl Content="{Binding ElementName=MenuTreeView,Path=SelectedValue}" ContentTemplateSelector="{StaticResource SimpleTemplateSelector}">
-                <ContentControl.Resources>
-                    <DataTemplate x:Key="AlarmZones">
-                        <local:UserControl1 />
-                    </DataTemplate>
-
-                    <DataTemplate x:Key="EventCounter">
-                        <local:UserControl1 />
-                    </DataTemplate>
-                </ContentControl.Resources>
-            </ContentControl>
-        </UniformGrid>
+        <DockPanel>
+            <Button DockPanel.Dock="Top" Click="Add">Add</Button>
+            <Button DockPanel.Dock="Top" Click="Remove">Remove</Button>
+            <ListBox x:Name="ListBox">
+                <local:UserControl1 />
+            </ListBox>
+        </DockPanel>
 
         <ListBox ItemsSource="{Binding ElementName=This,Path=Log}" FontFamily="Courier New"/>
     </UniformGrid>

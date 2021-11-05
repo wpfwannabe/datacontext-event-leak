@@ -33,5 +33,16 @@ namespace WpfApp4
         {
             Log = Logger;
         }
+
+        private void Add(object sender, RoutedEventArgs e)
+        {
+            ListBox.Items.Add(new UserControl1());
+        }
+
+        private void Remove(object sender, RoutedEventArgs e)
+        {
+            if (ListBox.Items.Count == 0) return;
+            ListBox.Items.RemoveAt(0);
+        }
     }
 }
